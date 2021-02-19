@@ -1,0 +1,138 @@
+<!Doctype html>
+<html>
+<head>
+    <title>Mine Your Own vieW | MYOW</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+
+    <link href="style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css">
+</head>
+
+<body>
+<h1 class="project-title">
+    Mine Your Own vieW: Self-Supervised Learning Through <br> Across-Sample Prediction
+</h1>
+
+<div class="project-conference">
+</div>
+
+<div class="project-icons">
+    <a href="https://arxiv.org/">
+        <i class="fa fa-file"></i> <br/>
+        Paper
+    </a>
+    <a href="">
+        <i class="fa fa-github"></i> <br/>
+        Code
+    </a>
+    <a href="">
+        <i class="fa fa-book"></i> <br/>
+        Docs
+    </a>
+    <a href="">
+        <img src="imgs/colab_logo.png" style="width: 35px;"/> <br/>
+        Colab
+    </a>
+    <a href="">
+        <i class="ai ai-arxiv"></i> <br>
+        Arxiv
+    </a>
+    <a href="">
+        <i class="ai ai-obp"></i> <br>
+        Citation
+    </a>
+</div>
+
+<div class="abstract">
+    <div class="section-title">Abstract</div>
+    State-of-the-art methods for self-supervised learning (SSL) build representations by maximizing the similarity
+    between different augmented “views” of a sample. Because these approaches try to match views of the same
+    sample, they can be too <em>myopic</em> and fail to produce meaningful results when augmentations are not
+    sufficiently rich. This motivates the use of the dataset itself to find similar, yet distinct, samples
+    to serve as views for one another.
+    In this paper, we introduce Mine Your Own vieW (MYOW),
+    a new approach for building across-sample prediction into SSL. The idea behind our approach is to actively
+    <em>mine views</em>, finding samples that are close in the representation space of the network, and then predict,
+    from one sample's latent representation, the representation of a nearby sample. We apply MYOW to benchmark
+    image datasets and in a new application in neuroscience, where we show that MYOW is competitive with
+    state-of-the-art methods on downstream tasks. When applied to neural datasets, MYOW outperforms other
+    self-supervised approaches in all examples (in some cases by more than 10%), and surpasses the supervised
+    baseline for most datasets. By learning to predict the latent representation of nearby samples, we show that
+    it is possible to learn good representations in new domains where augmentations are still limited.
+</div>
+
+<!--
+<div class="section-title">Datasets and code</div>
+<div class="supp">
+Image recognition in CIFAR-10 <br>
+<a href="">
+    <i class="fa fa-github"></i>
+    Code
+</a>
+<a href="">
+    <i class="fa fa-book"></i>
+    Docs <br>
+</a>
+
+Reach direction decoding in primates <br>
+<a href="">
+    <i class="fa fa-download"></i>
+    Dataset
+</a>
+
+<a href="">
+    <i class="fa fa-github"></i>
+    Code
+</a>
+
+<a href="">
+    <i class="fa fa-book"></i>
+    Docs
+</a>
+
+<a href="">
+    <img src="imgs/colab_logo.png" style="width: 35px;" />
+    Colab
+</a><br>
+
+Arousal state decoding in rodents <br>
+<a href="">
+    <i class="fa fa-github"></i>
+    Code
+</a>
+
+<a href="">
+    <i class="fa fa-book"></i>
+    Docs
+</a>
+</div>
+
+-->
+
+<div class="section-title">Team</div>
+
+<div class="authors">
+    <a href="https://dyerlab.gatech.edu">Mehdi Azabou</a><sup>1</sup>
+    <a href="">Mohammad Gheshlaghi Azar</a><sup>2</sup>
+    <a href="https://dyerlab.gatech.edu">Ran Liu</a><sup>1</sup>
+    <a href="https://dyerlab.gatech.edu">Chi-Heng Lin</a><sup>1</sup>
+    <a href="">Erik C. Johnson</a><sup>3</sup>
+    <a href="">Kiran Bhaskaran-Nair</a><sup>4</sup>
+    <a href="">Max Dabagia</a><sup>1</sup>
+    <a href="">Keith Hengen</a><sup>4</sup>
+    <a href="">William Gray-Roncal</a><sup>3</sup>
+    <a href="">Michal Valko</a><sup>5</sup>
+    <a href="https://dyerlab.gatech.edu">Eva Dyer</a><sup>1,6</sup>
+</div>
+<div class="affiliations">
+    <span><sup>1</sup>Georgia Tech,</span>
+    <span><sup>2</sup>DeepMind London UK,</span>
+    <span><sup>3</sup>Johns Hopkins University Applied Physics Laboratory,</span>
+    <span><sup>4</sup>Washington University in St. Louis,</span>
+    <span><sup>5</sup>DeepMind Paris,</span>
+    <span><sup>6</sup>Emory University</span>
+</div>
+</body>
+</html>

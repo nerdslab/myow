@@ -1,0 +1,121 @@
+body {
+    padding-top: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0 auto;
+    max-width: 950px;
+    background-color: #fff;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #1a1a1a;
+    font-size: 10pt;
+    line-height: 1.8em;
+    text-align: justify;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    counter-reset: figures;
+}
+a {
+    text-decoration: none;
+    color: #0505af;
+}
+h1.project-title {
+    text-align: center;
+    font-weight: normal;
+    line-height: 120%;
+    font-size: 32px;
+}
+.authors { text-align: center; }
+.authors a {
+    display: inline-block;
+    font-size: 18px;
+    padding: 4px;
+    padding-left: 10px;
+}
+.authors sup {
+    color: #313436;
+    font-size: 100%;
+}
+.affiliations {
+    font-size: 15px;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.affiliations > span {
+    padding-left: 10px;
+}
+.project-conference {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.project-icons {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.project-icons a {
+    display: inline-block;
+    font-weight: bold;
+    padding: 0px 20px 0px 20px;
+}
+.project-icons i { font-size: 30px; }
+
+.abstract {
+    font-size: 16px;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.supp {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 8px;
+    padding-left: 10px;
+}
+
+.supp i { font-size: 30px; }
+
+.section-title {
+    font-size: 18pt;
+    font-family: "Roboto", sans-serif;
+    color: #313436;
+    padding-bottom: 0.3em;
+    margin-top: 2em;
+    margin-bottom: 0.8em;
+    text-align: center;
+}
+.section-title:after {
+    content: " ";
+    display: block;
+    height: 2px;
+    margin-top: 4px;
+    background: #222;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    /*background: linear-gradient(90deg, white 0%, #333 50%, white 100%);*/
+}
+.video {text-align: center;}
+.content {
+    margin-bottom: 2em;
+    font-size: 12pt;
+    clear: both;
+}
+.image {
+    margin: 0 auto;
+    margin-bottom: 1em;
+    padding: 10px;
+    box-shadow: 3px 3px 10px #333;
+}
+.image img {width: 100%;}
+.image span::before {
+    counter-increment: figures;
+    content: "Figure " counter(figures) ": ";
+}
+.clear {clear: both;}
