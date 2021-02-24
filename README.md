@@ -18,7 +18,7 @@ export PYTHONPATH=$PYTHONPATH:$PWD
 Setting up your own datasets:
 
 * <a href='docs/custom_image_dataset.md'>Image dataset.</a><br>
-* <a href='docs/custom_image_dataset.md'>Temporal dataset.</a><br>
+* <a href='docs/custom_sequence_dataset.md'>Temporal dataset.</a><br>
 
 ## Contributors
 
