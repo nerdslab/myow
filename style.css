@@ -69,6 +69,13 @@ h1.project-title {
     margin: 0 auto;
 }
 
+.section {
+    font-size: 16px;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .supp {
     font-size: 16px;
     text-align: center;
@@ -111,7 +118,7 @@ h1.project-title {
     margin: 0 auto;
     margin-bottom: 1em;
     padding: 10px;
-    box-shadow: 3px 3px 10px #333;
+    /*box-shadow: 3px 3px 10px #333;*/
 }
 .image img {width: 100%;}
 .image span::before {
@@ -119,3 +126,10 @@ h1.project-title {
     content: "Figure " counter(figures) ": ";
 }
 .clear {clear: both;}
+
+pre code {
+  background-color: #eee;
+  border: 1px solid rgba(153, 153, 153, 0.28);
+  display: block;
+  padding: 20px;
+}

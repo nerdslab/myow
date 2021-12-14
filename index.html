@@ -1,5 +1,7 @@
 <!Doctype html>
 <html>
+<script src="https://unpkg.com/d3-3d/build/d3-3d.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
 <head>
     <title>Mine Your Own vieW | MYOW</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -19,7 +21,6 @@
 
         gtag('config', 'G-07QM58DRQB');
     </script>
-
 
     <link href="style.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -42,6 +43,8 @@
     <a href="">Erik C. Johnson</a><sup>3</sup>
     <a href="">Kiran Bhaskaran-Nair</a><sup>4</sup>
     <a href="">Max Dabagia</a><sup>1</sup>
+    <a href="">Bernardo Avila-Pires</a><sup>2</sup>
+    <a href="">Lindsey Kitchell</a><sup>3</sup>
     <a href="">Keith Hengen</a><sup>4</sup>
     <a href="">William Gray-Roncal</a><sup>3</sup>
     <a href="">Michal Valko</a><sup>5</sup>
@@ -69,36 +72,65 @@
         <i class="fa fa-book"></i> <br/>
         Docs
     </a>
-    <a href="">
-        <img src="imgs/colab_logo.png" style="width: 35px;"/> <br/>
-        Colab
-    </a>
+
+<!--    <a href="">-->
+<!--        <img src="imgs/colab_logo.png" style="width: 35px;"/> <br/>-->
+<!--        Colab-->
+<!--    </a>-->
     <a href="https://arxiv.org/abs/2102.10106">
         <i class="ai ai-arxiv"></i> <br>
         Arxiv
     </a>
-    <a href="">
-        <i class="ai ai-obp"></i> <br>
-        Citation
-    </a>
+<!--    <a href="">-->
+<!--        <i class="ai ai-obp"></i> <br>-->
+<!--        Citation-->
+<!--    </a>-->
 </div>
 
 <div class="abstract">
     <div class="section-title">Abstract</div>
     State-of-the-art methods for self-supervised learning (SSL) build representations by maximizing the similarity
-    between different augmented “views” of a sample. Because these approaches try to match views of the same
-    sample, they can be too <em>myopic</em> and fail to produce meaningful results when augmentations are not
-    sufficiently rich. This motivates the use of the dataset itself to find similar, yet distinct, samples
-    to serve as views for one another.
-    In this paper, we introduce Mine Your Own vieW (MYOW),
-    a new approach for building across-sample prediction into SSL. The idea behind our approach is to actively
-    <em>mine views</em>, finding samples that are close in the representation space of the network, and then predict,
-    from one sample's latent representation, the representation of a nearby sample. We apply MYOW to benchmark
-    image datasets and in a new application in neuroscience, where we show that MYOW is competitive with
-    state-of-the-art methods on downstream tasks. When applied to neural datasets, MYOW outperforms other
-    self-supervised approaches in all examples (in some cases by more than 10%), and surpasses the supervised
-    baseline for most datasets. By learning to predict the latent representation of nearby samples, we show that
-    it is possible to learn good representations in new domains where augmentations are still limited.
+    between different transformed "views" of a sample. Without sufficient diversity in the transformations used to
+    create views, however, it can be difficult to overcome nuisance variables in the data and build rich
+    representations. This motivates the use of the dataset itself to find similar, yet distinct, samples to serve as
+    views for one another.
+    In this paper, we introduce Mine Your Own vieW (MYOW), a new approach for self-supervised
+    learning that looks within the dataset to define diverse targets for prediction. The idea behind our approach is
+    to actively mine views, finding samples that are neighbors in the representation space of the network, and then
+    predict, from one sample's latent representation, the representation of a nearby sample. After showing the promise
+    of MYOW on benchmarks used in computer vision, we highlight the power of this idea in a novel application in
+    neuroscience where SSL has yet to be applied. When tested on multi-unit neural recordings, we find that MYOW
+    outperforms other self-supervised approaches in all examples (in some cases by more than 10%), and often surpasses
+    the supervised baseline. With MYOW, we show that it is possible to harness the diversity of the data to build rich
+    views and leverage self-supervision in new domains where augmentations are limited or unknown.
+</div>
+
+<div class="section-title">Mine Your Own vieW</div>
+<div class="section">
+    <h3> Augmented views</h3>
+    MYOW is built on top of BYOL. We similarly generate two augmented views of the same sample, and task a predictor
+    to predict across their representations.
+    <div class="image">
+    <img src="imgs/myow_aug.gif" /> <br/>
+    </div>
+</div>
+
+
+<div class="section">
+    <h3> Mined views</h3>
+    In addition to the augmented views, we <b>mine the dataset for positive examples</b>:
+    <ul>
+        <li>Feed the anchor view and candidate views through the online and target nets</li>
+        <li>Perform a kNN search in the representation space to find a positive view</li>
+        <li>After the cascaded projection, predict the projection of the mined view from that of the anchor view</li>
+    </ul>
+    <div class="image">
+    <img src="imgs/myow_mined.gif" /> <br/>
+    </div>
+</div>
+
+<div class="section">
+    More research: <a href="https://dyerlab.gatech.edu">NerDS lab</a>
 </div>
 
 </body>
